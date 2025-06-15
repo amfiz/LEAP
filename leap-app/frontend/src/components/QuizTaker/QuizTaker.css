@@ -1,0 +1,445 @@
+/* QuizTaker.css */
+
+/* Base colors */
+:root {
+  --dark-blue: #0a192f;
+  --medium-blue: #172a45;
+  --light-blue: #303f60;
+  --accent-blue: #64ffda;
+  --primary-orange: #ff7b25;
+  --light-orange: #ff9e53;
+  --light-text: #e6f1ff;
+  --medium-text: #ccd6f6;
+  --dark-text: #8892b0;
+}
+
+/* General styles */
+.quiz-page {
+  background-color: var(--dark-blue);
+  color: var(--light-text);
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-header {
+  background-color: var(--medium-blue);
+  padding: 1.25rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90px; /* Fixed height for better alignment */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: flex-start; /* Ensures items align to the left */
+}
+
+.leap-logo {
+  height: 90px;
+  width: auto;
+  margin-right: auto; /* Pushes any following elements to the right */
+}
+
+
+h1 {
+  margin: 0;
+  color: var(--light-text);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.back-link {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgba(255, 123, 37, 0.1);
+}
+
+.back-link:hover {
+  color: var(--light-orange);
+}
+
+/* Quiz container layout */
+.quiz-taker-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.quiz-taker-sidebar {
+  width: 250px;
+  background-color: var(--medium-blue);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.quiz-taker-main {
+  flex: 1;
+  background-color: var(--medium-blue);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Subject selection */
+.subject-selection h2 {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem; /* Added explicit size to ensure visibility */
+}
+
+.subject-options {
+  display: flex; /* Changed from grid to flex for better alignment */
+  flex-wrap: wrap;
+  justify-content: center; /* Centers all subjects instead of left alignment */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.subject-card {
+  flex: 0 0 150px; /* Fixed width for each subject card */
+  background-color: var(--light-blue);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  margin: 0.5rem; /* Added margin for better spacing */
+}
+
+.subject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subject-card.selected {
+  border-color: var(--primary-orange);
+  background-color: var(--light-blue);
+}
+
+.subject-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subject-name {
+  font-weight: 500;
+  color: var(--light-text);
+  font-size: 1rem; /* Explicit font size to prevent shrinking */
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: var(--light-orange);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: var(--dark-text);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.start-quiz-btn {
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+/* Question styles */
+.question-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-progress {
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: var(--light-text);
+}
+
+.options-container {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.option {
+  background-color: var(--light-blue);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid transparent;
+}
+
+.option:hover {
+  background-color: var(--light-blue);
+  border-color: var(--primary-orange);
+}
+
+.option.selected {
+  background-color: var(--light-blue);
+  border-color: var(--primary-orange);
+}
+
+.option.correct {
+  background-color: rgba(100, 255, 100, 0.2);
+  border-color: #64ff64;
+}
+
+.option.incorrect {
+  background-color: rgba(255, 100, 100, 0.2);
+  border-color: #ff6464;
+}
+
+.option-letter {
+  font-weight: bold;
+  color: var(--primary-orange);
+}
+
+.option-text {
+  color: var(--light-text);
+}
+
+/* Quiz actions */
+.quiz-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submit-btn, .next-btn {
+  min-width: 200px;
+}
+
+/* Explanation */
+.explanation {
+  background-color: rgba(10, 25, 47, 0.7);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--primary-orange);
+}
+
+.explanation h4 {
+  margin-top: 0;
+  color: var(--light-text);
+}
+
+.explanation p {
+  color: var(--medium-text);
+  margin-bottom: 0;
+}
+
+/* Results */
+.quiz-results {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quiz-results h2 {
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+.score-display {
+  margin-bottom: 2rem;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.score-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  z-index: 1;
+}
+
+.result-details {
+  text-align: left;
+  background-color: var(--light-blue);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.result-details p {
+  margin: 0.8rem 0;
+  color: var(--medium-text);
+}
+
+.result-details strong {
+  color: var(--light-text);
+}
+
+.badge-name {
+  font-weight: bold;
+}
+
+.difficulty-name {
+  color: var(--primary-orange);
+  font-weight: 500;
+}
+
+.new-quiz-btn {
+  margin-top: 1rem;
+}
+
+/* Sidebar styles */
+.quiz-taker-sidebar h3 {
+  color: var(--light-text);
+  margin-top: 0;
+  border-bottom: 1px solid var(--light-blue);
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem; /* Added explicit size */
+}
+
+.badge-display, .difficulty-display, .history-summary {
+  margin-bottom: 2rem;
+}
+
+/* Replaced circular badge style with badge-like appearance */
+.badge {
+  background-color: var(--primary-orange);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: white;
+  border-radius: 0.25rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
+}
+
+.badge::before {
+  content: "🏆"; /* Trophy emoji as a badge icon */
+  margin-right: 0.5rem;
+}
+
+.difficulty-level {
+  background-color: var(--light-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: var(--light-text);
+  font-size: 1rem; /* Explicit font size */
+}
+
+.history-summary p {
+  color: var(--medium-text);
+  margin: 0.5rem 0;
+  font-size: 0.95rem; /* Explicit font size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .quiz-taker-container {
+    flex-direction: column;
+  }
+  
+  .quiz-taker-sidebar {
+    width: auto;
+    order: 2;
+  }
+  
+  .subject-options {
+    justify-content: center; /* Keep centered on smaller screens */
+  }
+  
+  .header-content {
+    padding: 0.5rem 0;
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 1.8rem; /* Slightly smaller for mobile but still visible */
+  }
+  
+  .logo-container {
+    gap: 1rem;
+  }
+  
+  .leap-logo {
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subject-card {
+    flex: 0 0 calc(50% - 1rem); /* Two cards per row on very small screens */
+  }
+  
+  .header-content {
+    flex-direction: row; /* Keep header in a row even on small screens */
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  
+  .quiz-taker-main, .quiz-taker-sidebar {
+    padding: 1rem;
+  }
+  
+  .back-link {
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+  }
+}

@@ -1,0 +1,32 @@
+/* src/components/ShortAnswerQuestion.css */
+.short-answer-question {
+    margin-bottom: 20px;
+  }
+  
+  .question-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .answer-input {
+    width: 90%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 150px;
+    font-family: inherit;
+  }
+  
+  .answer-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .answer-input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }

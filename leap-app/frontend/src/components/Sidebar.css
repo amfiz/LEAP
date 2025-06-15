@@ -1,0 +1,105 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #0f121b;
+  color: white;
+  padding: 20px;
+  width: 40vh;
+  min-height: 100vh; /* Ensures it expands as content grows */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+
+.sidebar-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.performance-card {
+  background-color: #1a1e2e;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.metric {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #eae4e4;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eae4e4;
+}
+
+.quiz-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-item {
+  background-color: #1a1e2e;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.quiz-item-header {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.expand-icon {
+  margin-right: 8px;
+  font-size: 0.8rem;
+}
+
+.quiz-item-details {
+  padding: 10px 15px;
+  border-top: 1px solid #333;
+  background-color: #232738;
+}
+
+.detail-item {
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #aaa;
+  padding: 20px;
+}

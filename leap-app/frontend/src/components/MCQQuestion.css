@@ -1,0 +1,157 @@
+/* src/components/MCQQuestion.css /
+.mcq-question {
+margin-bottom: 20px;
+width: 100%;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+background-color: #2d1b4e; / Dark purple background */
+padding: 24px;
+border-radius: 12px;
+color: white;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.question-text {
+font-size: 1.25rem;
+margin-bottom: 24px;
+color: white;
+font-weight: 600;
+position: relative;
+padding-bottom: 8px;
+}
+.question-text::before {
+content: attr(data-number);
+color: #b8a9d2;
+font-size: 0.9rem;
+font-weight: 500;
+display: block;
+margin-bottom: 8px;
+}
+.options-container {
+display: flex;
+flex-direction: column;
+gap: 12px;
+width: 100%;
+}
+.option {
+position: relative;
+margin-bottom: 0;
+width: 100%;
+}
+.option label {
+display: flex;
+align-items: center;
+padding: 14px 18px;
+border: 2px solid #3d2a5e;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.2s ease;
+background-color: #3d2a5e;
+width: 100%;
+}
+.option label:hover:not(.disabled) {
+background-color: #4a3371;
+border-color: #5b3e8a;
+transform: translateY(-2px);
+}
+.option label.selected {
+background-color: #4a3371;
+border-color: #8258d0;
+box-shadow: 0 0 0 1px #8258d0;
+}
+.option input[type="radio"] {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.option-letter {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 32px;
+height: 32px;
+background-color: #2d1b4e;
+border-radius: 50%;
+margin-right: 15px;
+font-weight: bold;
+color: #b8a9d2;
+flex-shrink: 0;
+border: 1px solid #6641a9;
+}
+.option label.selected .option-letter {
+background-color: #6641a9;
+color: white;
+border-color: #8258d0;
+}
+.option-text {
+flex: 1;
+font-size: 1rem;
+color: #f0e6ff;
+line-height: 1.4;
+}
+.option label.selected .option-text {
+color: white;
+font-weight: 500;
+}
+.error-message {
+color: #ff94b8;
+padding: 10px;
+background-color: rgba(255, 148, 184, 0.1);
+border-radius: 4px;
+margin-top: 10px;
+border: 1px solid rgba(255, 148, 184, 0.3);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.options-container {
+grid-template-columns: 1fr;
+}
+.mcq-question {
+padding: 16px;
+}
+}
+/* Submit button styling to match the blue button in the image */
+.submit-button {
+background-color: #6641a9;
+color: white;
+border: none;
+border-radius: 8px;
+padding: 14px 24px;
+font-size: 1rem;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.2s ease;
+width: 100%;
+margin-top: 24px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+.submit-button:hover {
+background-color: #7851bc;
+transform: translateY(-2px);
+}
+.submit-button:disabled {
+background-color: #544166;
+cursor: not-allowed;
+opacity: 0.7;
+}
+/* Progress bar styling */
+.progress-container {
+width: 100%;
+height: 8px;
+background-color: #3d2a5e;
+border-radius: 4px;
+margin-bottom: 20px;
+overflow: hidden;
+}
+.progress-bar {
+height: 100%;
+background-color: #8258d0;
+border-radius: 4px;
+transition: width 0.3s ease;
+}
+/* Question counter styling */
+.question-counter {
+text-align: right;
+color: #b8a9d2;
+font-size: 0.9rem;
+margin-bottom: 10px;
+}

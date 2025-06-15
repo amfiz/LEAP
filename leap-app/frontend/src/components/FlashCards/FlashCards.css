@@ -1,0 +1,263 @@
+/* src/components/FlashCards/FlashCards.css */
+/* Global styles for full-page background */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  background-color: #001f3f; /* Dark blue */
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flashcards-container {
+  font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0d1b2a; /* Dark Blue */
+  color: #fff; /* Default white text */
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.app-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header-content h1 {
+  margin: 0;
+  color: #ffb703; /* Yellow */
+  font-size: 1.8rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 5px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: #ffb703;
+  text-decoration: underline;
+}
+
+.flashcards-content {
+  background-color: #1b263b; /* Slightly lighter dark blue */
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+.upload-section {
+  text-align: center;
+}
+
+.upload-section h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.upload-section p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.drop-area {
+  border: 2px dashed #ffb703;
+  border-radius: 8px;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+  background-color: #1e3a5f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-area:hover {
+  border-color: #fb8500;
+  background-color: #2a4d7b;
+}
+
+.drop-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffb703;
+}
+
+.error-message {
+  color: #ff4d4f;
+  margin: 10px 0;
+}
+
+.upload-btn {
+  background-color: #fb8500; /* Orange */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #ff7b00;
+}
+
+.upload-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Flash Cards Display */
+.flashcards-display {
+  padding: 20px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-counter {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffb703;
+}
+
+.new-pdf-btn {
+  background-color: #ffb703;
+  color: #0d1b2a;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-pdf-btn:hover {
+  background-color: #ffd166;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  max-width: 600px;
+}
+
+.flash-card {
+  background: #ffffff; /* Keep cards white for contrast */
+  color: #0d1b2a;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  height: 300px;
+  max-width: 600px;
+  overflow: auto;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.flash-card:active {
+  cursor: grabbing;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  color: #fb8500;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.nav-btn {
+  background: #ffb703;
+  color: #0d1b2a;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #ffd166;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.flash-card {
+  animation: cardFadeIn 0.5s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    transform: rotate(90deg);
+  }
+
+  .flash-card {
+    max-width: 100%;
+  }
+}

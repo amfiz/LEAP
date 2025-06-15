@@ -1,0 +1,284 @@
+/* src/components/QuizSession/QuizSession.css */
+
+/* Main container */
+.quiz-session {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress section */
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaecef;
+}
+
+.quiz-progress p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #e8edf6;
+}
+
+/* Question section */
+.quiz-question h3 {
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #e5e8ed;
+  line-height: 1.4;
+}
+
+/* MCQ options */
+.mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.mcq-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mcq-option:hover {
+  border-color: #4f46e5;
+  background-color: #f5f7ff;
+}
+
+.mcq-option input[type="radio"] {
+  margin-right: 14px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mcq-option label {
+  flex: 1;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1a202c;
+}
+
+.mcq-option input[type="radio"]:checked + label {
+  font-weight: 600;
+}
+
+.mcq-option input[type="radio"]:checked ~ .mcq-option {
+  border-color: #4f46e5;
+  background-color: #f5f7ff;
+}
+
+/* Short answer */
+.short-answer {
+  margin-bottom: 24px;
+}
+
+.short-answer textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 150px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.short-answer textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.short-answer textarea::placeholder {
+  color: #a0aec0;
+}
+
+/* Buttons */
+.submit-button, .next-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover, .next-button:hover {
+  background-color: #4338ca;
+}
+
+.submit-button:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+/* Feedback section */
+.feedback-container {
+  margin-top: 24px;
+}
+
+.feedback {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.feedback.correct {
+  background-color: #c6f6d5;
+  border-left: 4px solid #38a169;
+  color: #276749;
+}
+
+.feedback.incorrect {
+  background-color: #fed7d7;
+  border-left: 4px solid #e53e3e;
+  color: #c53030;
+}
+
+.feedback p {
+  margin: 8px 0;
+}
+
+/* Model answer */
+.model-answer {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: #ebf8ff;
+  border-radius: 8px;
+}
+
+.model-answer h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #2b6cb0;
+  font-size: 16px;
+}
+
+.model-answer p {
+  margin: 0;
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* Quiz completed */
+.quiz-completed {
+  text-align: center;
+  padding: 32px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-completed h2 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.quiz-results {
+  background-color: #f7fafc;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.quiz-results p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #4a5568;
+}
+
+.quiz-results p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 16px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-button:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .quiz-session, .quiz-completed {
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .quiz-question h3 {
+    font-size: 18px;
+  }
+  
+  .mcq-option {
+    padding: 12px;
+  }
+}
+/* Add these to your existing CSS */
+.model-answer {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #17a2b8;
+}
+
+.confidence-score {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #17a2b8;
+}
+
+.source-chunks {
+  margin-top: 15px;
+}
+
+.chunk {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.chunk-meta {
+  font-size: 0.8em;
+  color: #6c757d;
+  margin-top: 5px;
+}
