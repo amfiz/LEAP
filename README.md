@@ -2,9 +2,6 @@
 
 **AI-driven educational platform empowering high school students through smart content generation, interactive assessments, and personalized learning.**
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/amfiz/LEAP)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/amfiz/LEAP)
-![License](https://img.shields.io/github/license/amfiz/LEAP)
 
 ---
 
