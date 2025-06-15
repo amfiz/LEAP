@@ -40,8 +40,10 @@ LEAP is an intelligent learning platform designed to assist 9th and 10th-grade s
 
 ---
 
-# 👩‍💻 Author
-Fiza Shahzad
-Data Scientist | AI Developer | NLP Enthusiast
-📧 contact.fizashahzad@gmail.com
-🔗 LinkedIn • GitHub
+## 👩‍💻 Author
+
+**Fiza Shahzad**  
+Data Scientist | AI Developer | NLP Enthusiast  
+📧 contact.fizashahzad@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/fizashahzad) • [GitHub](https://github.com/amfiz)
+
